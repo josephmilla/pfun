@@ -1,3 +1,10 @@
+/**
+* Name: B+ Tree JavaScript
+* Authors: Joseph Milla
+* Version: 0.0.0;
+* Comment: Oh yeah...
+*/
+
 // Default order is 3.
 var DEFAULT_ORDER = 3;
 
