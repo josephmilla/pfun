@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+	<head>
+  	<title>B+ Tree</title>
+
+  	<!-- IMPORTED LIBRARIES -->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+		<!-- IMPORTED LIBRARIES::BOOTSTRAP -->
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+
+		<!-- ICONS -->
+	  <link href="#" rel="image_src"/>
+	  <link href="#" rel="shortcut icon"/>
+	  <link href="#" rel="apple-touch-icon-precomposed"/>
+
+	  <!-- STYLESHEET/S --> 
+    <!--<link href="css/override.css" rel="stylesheet">-->
+
+    <!-- JAVASCRIPT -->
+		<script src="js/bplustree.js"></script>
+	</head>
+
+	<body>
+		<b>Order:&nbsp;</b>
+		<select id=orderList onChange="javascript:doOrder(this)">
+			<option selected>3</option><option>4</option><option>5</option><option>6</option><option>7</option>
+			<option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option>
+			<option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option></select>&nbsp;&nbsp;&nbsp;
+
+		<input type=button name=PrintLvsBtn value="Print Leaves" onClick="javascript:doPrintLeaves()" />
+		<input type=button name=PrintTreeBtn value="Print Tree" onClick="javascript:doPrintTree()" />
+		<input type=button name=DestroyBtn value="Start Over" onClick="javascript:doDestroy()" /><br><br>
+
+		<b>Data:&nbsp;&nbsp;</b><input type=text id=inputData value="" /><br>
+
+		<b>Key:&nbsp;&nbsp;&nbsp;</b><input type=text id=inputKey value="" size=10 />
+		<input type=button id=InsertBtn value=" Insert " onClick="javascript:doInsert()" /><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+		<input type=text id=findKey value="" size=10/>
+		<input type=button name=FindBtn value="  Find  " onClick="javascript:doFind()" /><br>
+
+		<table>
+		<tr><td><b>Min:&nbsp;&nbsp;</b><input type=text id=minRange value="" size=7/></td><td rowspan=2>
+		<input type=button name=FindRangeBtn value=" Find Range " onClick="javascript:doFindRange()" style="height: 50px; width: 80px"/></td></tr>
+		<tr><td><b>Max:&nbsp;</b><input type=text id=maxRange value="" size=7/></td></tr>
+		</table><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+		<input type=text id=deleteKey value="" size=10/>
+		<input type=button name=DeleteBtn value="Delete" onClick="javascript:doDelete()" /><br><br>
+
+		<div id="output" align=center>Empty tree.</div><br>
+		<div id="myTreeContainer"></div>
+	</body>
+</html> 
