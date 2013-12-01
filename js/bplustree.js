@@ -779,7 +779,7 @@ BPLusTree.prototype = {
 		return null;
 	}
 	
-    //more methods here
+    /* More to follow */
 }
 
 var myBPT = new BPLusTree();
@@ -790,7 +790,7 @@ var r;
 function doOrder(orderList)
 {
     var myindex  = orderList.selectedIndex;
-    var SelValue = orderList.options[myindex].text; //alert(SelValue);
+    var SelValue = orderList.options[myindex].text;
 	doDestroy();
 	myBPT.order = parseInt(SelValue);
 }
@@ -802,8 +802,6 @@ function doInsert()
 	if (strKey=="") {alert("Please provide key"); return;}
 	if (isNaN(strKey)) {alert("Key must be numeric"); return;}
 	myBPT.bubbooID++;
-//	var re = /^[A-Za-z0-9]+$/;
-//	if (!re.test(strData)) {alert("Data must be alpha-numeric"): return;};
 	root = myBPT.insert(root, parseFloat(strKey), strData);
 	myBPT.print_tree(root);
 }

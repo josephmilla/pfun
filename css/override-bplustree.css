@@ -5,8 +5,27 @@
 * Comment: This will override Bootstrap
 */
 
+body {
+	font-family: 'Avenir Next', sans-serif;
+}
+
+h1 {
+	font-size: 55px;
+	font-weight: bold;
+}
+
 .input-group-addon-o {
 	color: #ffffff;
   background-color: #428bca;
   border-color: #357ebd;
+}
+
+.home-link {
+	color: #A9A9A9; 
+	text-decoration: none;
+}
+
+.home-link:hover {
+	color: #808080; 
+	text-decoration: none;
 }
