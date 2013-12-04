@@ -806,10 +806,24 @@ function doInsert()
 	myBPT.print_tree(root);
 }
 
+/*
+function doFind()
+{
+	if (root === null) {$('#printLeaves').modal('show'); return;}
+	var strFind = document.getElementById('findKey').value;
+	if (strFind=="") {alert("Please provide key"); return;}
+	if (isNaN(strFind)) {alert("Key must be numeric"); return;}
+	r = myBPT.find(root, strFind);
+	if (r === null)
+		alert("Record not found under key " + strFind);
+	else 
+		alert("Record at key " + strFind + " value " + r.value);
+}
+*/
+
 function doFind()
 {
 	if (root === null) {alert("Tree is Empty!"); return;}
-	/*if (root === null) {$('#printLeaves').modal("show"); return;}*/
 	var strFind = document.getElementById('findKey').value;
 	if (strFind=="") {alert("Please provide key"); return;}
 	if (isNaN(strFind)) {alert("Key must be numeric"); return;}
