@@ -809,6 +809,7 @@ function doInsert()
 function doFind()
 {
 	if (root === null) {alert("Tree is Empty!"); return;}
+	/*if (root === null) {$('#printLeaves').modal("show"); return;}*/
 	var strFind = document.getElementById('findKey').value;
 	if (strFind=="") {alert("Please provide key"); return;}
 	if (isNaN(strFind)) {alert("Key must be numeric"); return;}
