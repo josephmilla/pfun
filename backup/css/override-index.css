@@ -1,0 +1,150 @@
+/**
+* Name: PFun Landing Page CSS Stylesheet
+* Authors: Joseph Milla
+* Version: 0.0.0;
+* Comment: This will override Bootstrap
+*/
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+body {
+	background-color: #55ACEE;	
+	/*font-family: 'Open Sans', sans-serif;*/
+	font-family: 'Avenir Next', sans-serif;
+	text-align: center;
+	margin-top: 10%;
+}
+
+h1 {
+	font-size: 55px;
+	font-weight: bold;
+}
+
+h3, .btn-lg-o {
+	font-size: 23.5px;
+	font-weight: bold;
+}
+
+a {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #DDDDDD;
+	/*color: #fabd55;*/
+	text-decoration: none;
+}
+
+.amp {
+  opacity: 0.7;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  filter: alpha(opacity=70);
+  font-style: italic;
+  font-family: baskerville, palatino, georgia, serif;
+  font-weight: normal;
+}
+
+.footer {
+  font-size: 0.9em;
+  text-align: center;
+  color: #FFFFFF;
+  padding: 0 0 40px 0;
+}
+
+.footer p {
+  margin: 20px 0;
+}
+
+.footer strong {
+  font-weight: bold;
+}
+
+.footer a {
+  color: #FFFFFF;
+  border-bottom: dotted 1px #FFFFFF;
+}
+
+.footer a:hover {
+  color: #DDDDDD;
+  /*color: #fabd55;*/
+  text-decoration: none;
+}
+
+.footer .logo-footer {
+  opacity: 0.3;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+  filter: alpha(opacity=30);
+  margin: 40px 0 -10px 0;
+}
+
+.footer .amp {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+  margin: 0 2px;
+}
+
+.jumbotron-o {
+	background-color: transparent;
+	color: #FFFFFF;
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+/* Styles */
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen 
+and (min-width : 321px) {
+/* Styles */
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen 
+and (max-width : 320px) {
+/* Styles */
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+/* Styles */
+}
+
+/* iPads (landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+/* Styles */
+}
+
+/* iPads (portrait) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) {
+/* Styles */
+}
+
+/* Desktops and laptops ----------- */
+@media only screen 
+and (min-width : 1224px) {
+/* Styles */
+}
+
+/* Large screens ----------- */
+@media only screen 
+and (min-width : 1824px) {
+/* Styles */
+}
+
+/* iPhone 4 ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
