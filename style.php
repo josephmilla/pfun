@@ -1,14 +1,5 @@
 <style>
-body {
-	font: normal 15px auto "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
-	color: #4f6b72;
-	background: #E6EAE9;
-}
-
-a {
-	color: #c75f3e;
-}
-
+/*
 #mytable {
 	width: 700px;
 	padding: 0;
@@ -68,33 +59,10 @@ display: block
 .submit input
 {
 margin-left: 4.5em;
-}
-input
-{
-color: #781351;
-background: #fee3ad;
-border: 1px solid #781351
-}
-
-.submit input
-{
 color: #000;
 background: #ffa20f;
 border: 2px outset #d7b9c9
 }
-
-fieldset
-{
-border: 1px solid #781351;
-width: 20em
-}
-
-legend
-{
-color: #fff;
-background: #ffa20c;
-border: 1px solid #781351;
-padding: 2px 6px
-}
+*/
 
 </style>
