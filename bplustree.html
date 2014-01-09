@@ -7,422 +7,422 @@
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
-	<head>
-  	<title>PFun - B+ Tree</title>
-  	<!-- IMPORTED LIBRARIES -->
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
+  <head>
+    <title>PFun - B+ Tree</title>
+    <!-- IMPORTED LIBRARIES -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
 
-		<!-- IMPORTED LIBRARIES:STYLESHEETS -->
-		<!-- STYLESHEETS::BOOTSTRAP 3.0.2 -->
-		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"/>
-		<link href="css/bootstrap-select.min.css" rel="stylesheet">
+    <!-- IMPORTED LIBRARIES:STYLESHEETS -->
+    <!-- STYLESHEETS::BOOTSTRAP 3.0.2 -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"/>
+    <link href="css/bootstrap-select.min.css" rel="stylesheet">
 
-		<!-- ICONS -->
-		<link href="#" rel="image_src"/>
-		<link href="#" rel="shortcut icon"/>
-		<link href="#" rel="apple-touch-icon-precomposed"/>
+    <!-- ICONS -->
+    <link href="#" rel="image_src"/>
+    <link href="#" rel="shortcut icon"/>
+    <link href="#" rel="apple-touch-icon-precomposed"/>
 
-	  <!-- STYLESHEETS -->
-		<link href="css/override-bplustree.css" rel="stylesheet">
-	</head>
+    <!-- STYLESHEETS -->
+    <link href="css/override-bplustree.css" rel="stylesheet">
+  </head>
 
-	<body>
-		<div class="container">
-			<!-- FIRST ROW -->
-			<br><br>
-  		<div class="row">
-  			<div class="col-md-10">
-  				<h1><a href="index.html" class="home-link">PFun</a> / B+ Tree</h1>
-  			</div>
-  			<div class="col-md-2" style="margin: 40px 0 0 0;">
-  				<!-- PRINT LEAVES -->
-					<button type=button name=PrintLvsBtn value="Print Leaves" onClick="javascript:doPrintLeaves()" class="btn btn-primary btn-lg btn-lg-o" role="button" data-toggle="modal">
-						<span class="glyphicon glyphicon-print"></span>
-					</button>
+  <body>
+    <div class="container">
+      <!-- FIRST ROW -->
+      <br><br>
+      <div class="row">
+        <div class="col-md-10">
+          <h1><a href="index.html" class="home-link">PFun</a> / B+ Tree</h1>
+        </div>
+        <div class="col-md-2" style="margin: 40px 0 0 0;">
+          <!-- PRINT LEAVES -->
+          <button type=button name=PrintLvsBtn value="Print Leaves" onClick="javascript:doPrintLeaves()" class="btn btn-primary btn-lg btn-lg-o" role="button" data-toggle="modal">
+            <span class="glyphicon glyphicon-print"></span>
+          </button>
 
-      		<div id="printLeaves" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="printLeavesLabel" aria-hidden="true">
-						<div class="modal-dialog">
-								<div class="alert alert-success fade in">
-					        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					        <strong>
-					        	<span class="glyphicon glyphicon-ok"></span>
-					        	Holy guacamole!
-					        </strong> 
-					        The printing of leaves is now complete.
-				      </div>
-          	</div>
+          <div id="printLeaves" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="printLeavesLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="alert alert-success fade in">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <strong>
+                    <span class="glyphicon glyphicon-ok"></span>
+                    Holy guacamole!
+                  </strong> 
+                  The printing of leaves is now complete.
+              </div>
+            </div>
           </div>
 
           <!-- START OVER -->
-					<button type=button name=DestroyBtn value="Start Over" onClick="javascript:doDestroy()" class="btn btn-primary btn-lg btn-lg-o" role="button" data-toggle="modal" data-target="#startOver">
-						<span class="glyphicon glyphicon-refresh"></span>
-					</button>
+          <button type=button name=DestroyBtn value="Start Over" onClick="javascript:doDestroy()" class="btn btn-primary btn-lg btn-lg-o" role="button" data-toggle="modal" data-target="#startOver">
+            <span class="glyphicon glyphicon-refresh"></span>
+          </button>
 
-					<div id="startOver" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="startOverLabel" aria-hidden="true">
-						<div class="modal-dialog">
-								<div class="alert alert-success fade in">
-					        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					        <strong>
-					        	<span class="glyphicon glyphicon-ok"></span>
-					        	So, you want to try again?
-					        </strong> 
-					        The program is now clean and ready to go!
-				      </div>
-          	</div>
+          <div id="startOver" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="startOverLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="alert alert-success fade in">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <strong>
+                    <span class="glyphicon glyphicon-ok"></span>
+                    So, you want to try again?
+                  </strong> 
+                  The program is now clean and ready to go!
+              </div>
+            </div>
           </div>
 
-					<!-- MORE INFO -->
-					<button type=button class="btn btn-primary btn-lg btn-lg-o" role="button" data-toggle="modal" data-target="#moreInfo">
-						<span class="glyphicon glyphicon-info-sign"></span>
-					</button>
+          <!-- MORE INFO -->
+          <button type=button class="btn btn-primary btn-lg btn-lg-o" role="button" data-toggle="modal" data-target="#moreInfo">
+            <span class="glyphicon glyphicon-info-sign"></span>
+          </button>
 
-					<div id="moreInfo" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="moreInfoLabel" aria-hidden="true">
-						<div class="modal-dialog">
-							<div class="modal-content">
-								<div class="modal-header">
-									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-									<h3 class="modal-title" id="moreInfoLabel">B+ Tree</h3>
-								</div>
+          <div id="moreInfo" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="moreInfoLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h3 class="modal-title" id="moreInfoLabel">B+ Tree</h3>
+                </div>
 
-								<div class="modal-body">
-									<h4>What's a B+ Tree?</h4>
-									<p>A B+ tree is an n-ary tree with a variable but often large number of children per node. A B+ tree consists of a root, internal nodes and leaves. The root may be either a leaf or a node with two or more children.</p>
+                <div class="modal-body">
+                  <h4>What's a B+ Tree?</h4>
+                  <p>A B+ tree is an n-ary tree with a variable but often large number of children per node. A B+ tree consists of a root, internal nodes and leaves. The root may be either a leaf or a node with two or more children.</p>
 
-									<h4>Similarity to B-Tree</h4>
-									<p>A B+ tree can be viewed as a <a href="http://en.wikipedia.org/wiki/B-tree">B-tree</a> in which each node contains only keys (not key-value pairs), and to which an additional level is added at the bottom with linked leaves.</p>
+                  <h4>Similarity to B-Tree</h4>
+                  <p>A B+ tree can be viewed as a <a href="http://en.wikipedia.org/wiki/B-tree">B-tree</a> in which each node contains only keys (not key-value pairs), and to which an additional level is added at the bottom with linked leaves.</p>
 
-									<h4>Compatibility</h4>
-									<p>The <a href="http://en.wikipedia.org/wiki/NTFS">NTFS</a>, <a href="http://en.wikipedia.org/wiki/ReiserFS">ReiserFS</a>, <a href="http://en.wikipedia.org/wiki/Novell_Storage_Services">NSS</a>, <a href="http://en.wikipedia.org/wiki/XFS">XFS</a>, <a href="http://en.wikipedia.org/wiki/JFS_(file_system)">JFS</a>, and <a href="http://en.wikipedia.org/wiki/ReFS">ReFS</a> filesystems all use this type of tree for metadata indexing. <a href="http://en.wikipedia.org/wiki/Relational_database_management_system">Relational database management systems</a> such as <a href="http://en.wikipedia.org/wiki/IBM_DB2">IBM DB2</a>, <a href="http://en.wikipedia.org/wiki/Informix">Informix</a>, <a href="http://en.wikipedia.org/wiki/Microsoft_SQL_Server">Microsoft SQL Server</a>, <a href="http://en.wikipedia.org/wiki/Oracle_Database">Oracle 8</a>, <a href="http://en.wikipedia.org/wiki/Adaptive_Server_Enterprise">Sybase ASE</a>, and <a href="http://en.wikipedia.org/wiki/SQLite">SQLite</a> support this type of tree for table indices. Key-value database management systems such as <a href="http://en.wikipedia.org/wiki/CouchDB">CouchDB</a> and <a href="http://en.wikipedia.org/wiki/Tokyo_Cabinet">Tokyo Cabinet</a> support this type of tree for data access.</p>
+                  <h4>Compatibility</h4>
+                  <p>The <a href="http://en.wikipedia.org/wiki/NTFS">NTFS</a>, <a href="http://en.wikipedia.org/wiki/ReiserFS">ReiserFS</a>, <a href="http://en.wikipedia.org/wiki/Novell_Storage_Services">NSS</a>, <a href="http://en.wikipedia.org/wiki/XFS">XFS</a>, <a href="http://en.wikipedia.org/wiki/JFS_(file_system)">JFS</a>, and <a href="http://en.wikipedia.org/wiki/ReFS">ReFS</a> filesystems all use this type of tree for metadata indexing. <a href="http://en.wikipedia.org/wiki/Relational_database_management_system">Relational database management systems</a> such as <a href="http://en.wikipedia.org/wiki/IBM_DB2">IBM DB2</a>, <a href="http://en.wikipedia.org/wiki/Informix">Informix</a>, <a href="http://en.wikipedia.org/wiki/Microsoft_SQL_Server">Microsoft SQL Server</a>, <a href="http://en.wikipedia.org/wiki/Oracle_Database">Oracle 8</a>, <a href="http://en.wikipedia.org/wiki/Adaptive_Server_Enterprise">Sybase ASE</a>, and <a href="http://en.wikipedia.org/wiki/SQLite">SQLite</a> support this type of tree for table indices. Key-value database management systems such as <a href="http://en.wikipedia.org/wiki/CouchDB">CouchDB</a> and <a href="http://en.wikipedia.org/wiki/Tokyo_Cabinet">Tokyo Cabinet</a> support this type of tree for data access.</p>
 
-									<hr>
+                  <hr>
 
-									<h4>Algorithms</h4>
-									<h5>Search</h5>
-									<p>The root of a B+ Tree represents the whole range of values in the tree, where every internal node is a subinterval.</p>
-									<p>We are looking for a value k in the B+ Tree. Starting from the root, we are looking for the leaf which may contain the value k. At each node, we figure out which internal pointer we should follow. An internal B+ Tree node has at most d ≤ b children, where every one of them represents a different sub-interval. We select the corresponding node by searching on the key values of the node.</p>
-									<h5>Insertion</h5>
-									<p>Perform a search to determine what bucket the new record should go into.</p>
-									<ul>
-										<li>If the bucket is not full (at most b - 1 entries after the insertion), add the record.</li>
-										<li>Otherwise, split the bucket.</li>
-										<ul>
-											<li>Allocate new leaf and move half the bucket's elements to the new bucket.</li>
-											<li>Insert the new leaf's smallest key and address into the parent.</li>
-											<li>If the parent is full, split it too.</li>
-											<ul>
-												<li>Add the middle key to the parent node.</li>
-											</ul>
-											<li>Repeat until a parent is found that need not split.</li>
-										</ul>
-										<li>If the root splits, create a new root which has one key and two pointers. (That is, the value that gets pushed to the new root gets removed from the original node)</li>
-									</ul>
-									<p>B-trees grow at the root and not at the leaves.</p>
-									<h5>Deletion</h5>
-									<ul>
-										<li>Start at root, find leaf L where entry belongs.</li>
-										<li>Remove the entry.</li>
-										<ul>
-											<li>If L is at least half-full, done!</li>
-											<li>If L has fewer entries than it should,</li>
-											<ul>
-												<li>Try to re-distribute, borrowing from sibling (adjacent node with same parent as L).</li>
-												<li>If re-distribution fails, merge L and sibling.</li>
-											</ul>
-										</ul>
-										<li>If merge occurred, must delete entry (pointing to L or sibling) from parent of L.</li>
-										<li>Merge could propagate to root, decreasing height.</li>
-									</ul>
-									<p><i>Source: Wikipedia</i></p>
-          			</div>
-          			<div class="modal-footer">
-          				<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-          			</div>
-          		</div>
-          	</div>
+                  <h4>Algorithms</h4>
+                  <h5>Search</h5>
+                  <p>The root of a B+ Tree represents the whole range of values in the tree, where every internal node is a subinterval.</p>
+                  <p>We are looking for a value k in the B+ Tree. Starting from the root, we are looking for the leaf which may contain the value k. At each node, we figure out which internal pointer we should follow. An internal B+ Tree node has at most d ≤ b children, where every one of them represents a different sub-interval. We select the corresponding node by searching on the key values of the node.</p>
+                  <h5>Insertion</h5>
+                  <p>Perform a search to determine what bucket the new record should go into.</p>
+                  <ul>
+                    <li>If the bucket is not full (at most b - 1 entries after the insertion), add the record.</li>
+                    <li>Otherwise, split the bucket.</li>
+                    <ul>
+                      <li>Allocate new leaf and move half the bucket's elements to the new bucket.</li>
+                      <li>Insert the new leaf's smallest key and address into the parent.</li>
+                      <li>If the parent is full, split it too.</li>
+                      <ul>
+                        <li>Add the middle key to the parent node.</li>
+                      </ul>
+                      <li>Repeat until a parent is found that need not split.</li>
+                    </ul>
+                    <li>If the root splits, create a new root which has one key and two pointers. (That is, the value that gets pushed to the new root gets removed from the original node)</li>
+                  </ul>
+                  <p>B-trees grow at the root and not at the leaves.</p>
+                  <h5>Deletion</h5>
+                  <ul>
+                    <li>Start at root, find leaf L where entry belongs.</li>
+                    <li>Remove the entry.</li>
+                    <ul>
+                      <li>If L is at least half-full, done!</li>
+                      <li>If L has fewer entries than it should,</li>
+                      <ul>
+                        <li>Try to re-distribute, borrowing from sibling (adjacent node with same parent as L).</li>
+                        <li>If re-distribution fails, merge L and sibling.</li>
+                      </ul>
+                    </ul>
+                    <li>If merge occurred, must delete entry (pointing to L or sibling) from parent of L.</li>
+                    <li>Merge could propagate to root, decreasing height.</li>
+                  </ul>
+                  <p><i>Source: Wikipedia</i></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
           </div>
-    		</div>
-    	</div>
+        </div>
+      </div>
 
-    	<!-- SECOND ROW -->
-    	<br><br>
-    	<div class="row">
-    		<!-- SELECT ORDER -->
-    		<div class="col-lg-4">
-					<div class="input-group input-group-lg">
-						<span type=button class="input-group-addon">
-							Order
-						</span>
-						<select id=orderList onChange="javascript:doOrder(this)" class="form-control selectpicker">
-							<option selected>3</option>
-							<option>4</option>
-							<option>5</option>
-							<option>6</option>
-							<option>7</option>
-							<option>8</option>
-							<option>9</option>
-							<option>10</option>
-							<option>11</option>
-							<option>12</option>
-							<option>13</option>
-							<option>14</option>
-							<option>15</option>
-							<option>16</option>
-							<option>17</option>
-							<option>18</option>
-							<option>19</option>
-							<option>20</option>
-						</select>
-					</div>
-    		</div>
+      <!-- SECOND ROW -->
+      <br><br>
+      <div class="row">
+        <!-- SELECT ORDER -->
+        <div class="col-lg-4">
+          <div class="input-group input-group-lg">
+            <span type=button class="input-group-addon">
+              Order
+            </span>
+            <select id=orderList onChange="javascript:doOrder(this)" class="form-control selectpicker">
+              <option selected>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+              <option>11</option>
+              <option>12</option>
+              <option>13</option>
+              <option>14</option>
+              <option>15</option>
+              <option>16</option>
+              <option>17</option>
+              <option>18</option>
+              <option>19</option>
+              <option>20</option>
+            </select>
+          </div>
+        </div>
 
-    		<!-- FIND KEY -->
-				<div class="col-lg-4">
-					<div class="input-group input-group-lg">
-						<input type=text id=findKey value="" class="form-control" placeholder="Find Value">
-						<span type=button name=FindBtn value="Find" onClick="javascript:doFind()" class="input-group-addon input-group-addon-o btn btn-primary btn-lg btn-lg-o">
-							<span class="glyphicon glyphicon-search"></span>
-						</span>
-					</div>
-    		</div>
-  			
-  			<!-- DELETE KEY -->
-  			<div class="col-lg-4">
-  				<div class="input-group input-group-lg">
-						<input type=text id=deleteKey value="" class="form-control" placeholder="Delete Value">
-						<span type=button name=DeleteBtn value="Delete" onClick="javascript:doDelete()" class="input-group-addon input-group-addon-o btn btn-primary btn-lg btn-lg-o">
-							<span class="glyphicon glyphicon-trash"></span>
-						</span>
-					</div>
-  			</div>
-  		</div>
-			
-			<!-- THIRD ROW -->
-			<br><br>
-			<div class="row">
-				<!-- DATA-KEY INPUT -->
-				<div class="col-lg-12">
-					<div class="input-group input-group-lg">
-						<span class="input-group-addon">Data</span>
-						<input type=text id=inputData value="" class="form-control" placeholder="Data Value">
-						<span class="input-group-addon">Key</span>
-						<input type=text id=inputKey value="" class="form-control" placeholder="Key Value">
-						<span class="input-group-addon input-group-addon-o btn btn-primary btn-lg btn-lg-o" role="button" type=button id=InsertBtn value="Insert" onClick="javascript:doInsert()">
-							<span class="glyphicon glyphicon-plus"></span>
-						</span>
-					</div>
-    		</div>
-  		</div>
+        <!-- FIND KEY -->
+        <div class="col-lg-4">
+          <div class="input-group input-group-lg">
+            <input type=text id=findKey value="" class="form-control" placeholder="Find Value">
+            <span type=button name=FindBtn value="Find" onClick="javascript:doFind()" class="input-group-addon input-group-addon-o btn btn-primary btn-lg btn-lg-o">
+              <span class="glyphicon glyphicon-search"></span>
+            </span>
+          </div>
+        </div>
+        
+        <!-- DELETE KEY -->
+        <div class="col-lg-4">
+          <div class="input-group input-group-lg">
+            <input type=text id=deleteKey value="" class="form-control" placeholder="Delete Value">
+            <span type=button name=DeleteBtn value="Delete" onClick="javascript:doDelete()" class="input-group-addon input-group-addon-o btn btn-primary btn-lg btn-lg-o">
+              <span class="glyphicon glyphicon-trash"></span>
+            </span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- THIRD ROW -->
+      <br><br>
+      <div class="row">
+        <!-- DATA-KEY INPUT -->
+        <div class="col-lg-12">
+          <div class="input-group input-group-lg">
+            <span class="input-group-addon">Data</span>
+            <input type=text id=inputData value="" class="form-control" placeholder="Data Value">
+            <span class="input-group-addon">Key</span>
+            <input type=text id=inputKey value="" class="form-control" placeholder="Key Value">
+            <span class="input-group-addon input-group-addon-o btn btn-primary btn-lg btn-lg-o" role="button" type=button id=InsertBtn value="Insert" onClick="javascript:doInsert()">
+              <span class="glyphicon glyphicon-plus"></span>
+            </span>
+          </div>
+        </div>
+      </div>
 
-  		<!-- FOURTH ROW -->
-  		<br><br>
-			<div class="row">
-				<!-- FIND MAXIMUM AND MINIMUM KEYS -->
-				<div class="col-lg-12">
-					<div class="input-group input-group-lg">
-						<span class="input-group-addon">Maximum</span>
-						<input type=text id=maxRange value="" class="form-control" placeholder="Maximum Value">
-						<span class="input-group-addon">Minimum</span>
-						<input type=text id=minRange value="" class="form-control" placeholder="Minimum Value">
-						<span class="input-group-addon input-group-addon-o btn btn-primary btn-lg btn-lg-o" role="button" type=button name=FindRangeBtn value="Find Range" onClick="javascript:doFindRange()">
-							<span class="glyphicon glyphicon-sort"></span>
-						</span>
-					</div>
-    		</div>
-  		</div>
+      <!-- FOURTH ROW -->
+      <br><br>
+      <div class="row">
+        <!-- FIND MAXIMUM AND MINIMUM KEYS -->
+        <div class="col-lg-12">
+          <div class="input-group input-group-lg">
+            <span class="input-group-addon">Maximum</span>
+            <input type=text id=maxRange value="" class="form-control" placeholder="Maximum Value">
+            <span class="input-group-addon">Minimum</span>
+            <input type=text id=minRange value="" class="form-control" placeholder="Minimum Value">
+            <span class="input-group-addon input-group-addon-o btn btn-primary btn-lg btn-lg-o" role="button" type=button name=FindRangeBtn value="Find Range" onClick="javascript:doFindRange()">
+              <span class="glyphicon glyphicon-sort"></span>
+            </span>
+          </div>
+        </div>
+      </div>
 
-  		<!-- OUTPUT -->
-  		<br><br><br><br>
-			<div id="output" align=center>
-				Empty tree.
-			</div>
+      <!-- OUTPUT -->
+      <br><br><br><br>
+      <div id="output" align=center>
+        Empty tree.
+      </div>
 
-			<div id="myTreeContainer">
-			</div>
-		</div>
+      <div id="myTreeContainer">
+      </div>
+    </div>
 
-		<!-- ALERTS -->
-		<!-- EMPTY TREE -->
-		<div id="emptyTree" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="emptyTreeLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="alert alert-danger fade in">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<strong>
-						<span class="glyphicon glyphicon-remove"></span>
-						Uh, oh!
-					</strong>
-					Sorry, the tree is empty.
-				</div>
-			</div>
-		</div>
-		<!-- RANGE IS NOT VALID -->
-		<div id="range_notValid" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="range_notValidLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="alert alert-danger fade in">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<strong>
-						<span class="glyphicon glyphicon-remove"></span>
-						Which came first, the chicken or the egg?
-					</strong>
-					Sorry, the range is not valid.
-				</div>
-			</div>
-		</div>
-		<!-- NO KEY PROVIDED -->
-		<div id="noKey" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="noKeyLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="alert alert-danger fade in">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<strong>
-						<span class="glyphicon glyphicon-remove"></span>
-						No can do!
-					</strong>
-					There is no key provided.
-				</div>
-			</div>
-		</div>
-		<!-- NO MINIMUM RANGE PROVIDED -->
-		<div id="noMin" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="noMinLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="alert alert-danger fade in">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<strong>
-						<span class="glyphicon glyphicon-remove"></span>
-						I can't do it!
-					</strong>
-					There is no minimum range provided.
-				</div>
-			</div>
-		</div>
-		<!-- NO MINIMUM RANGE PROVIDED -->
-		<div id="noMax" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="noMaxLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="alert alert-danger fade in">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<strong>
-						<span class="glyphicon glyphicon-remove"></span>
-						I can't do it!
-					</strong>
-					There is no maximum range provided.
-				</div>
-			</div>
-		</div>
-		<!-- KEY MUST BE NUMERIC -->
-		<div id="mustbeNumeric" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mustbeNumericLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="alert alert-danger fade in">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<strong>
-						<span class="glyphicon glyphicon-remove"></span>
-						I don't speak letters.
-					</strong>
-					The key must be numeric.
-				</div>
-			</div>
-		</div>
-		<!-- MINIMUM RANGE MUST BE NUMERIC -->
-		<div id="min_mustbeNumeric" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="min_mustbeNumericLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="alert alert-danger fade in">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<strong>
-						<span class="glyphicon glyphicon-remove"></span>
-						I don't speak letters.
-					</strong>
-					The minimum range must be numeric.
-				</div>
-			</div>
-		</div>
-		<!-- MAXIMUM RANGE MUST BE NUMERIC -->
-		<div id="max_mustbeNumeric" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="max_mustbeNumericLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="alert alert-danger fade in">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<strong>
-						<span class="glyphicon glyphicon-remove"></span>
-						I don't speak letters.
-					</strong>
-					The maximum range must be numeric.
-				</div>
-			</div>
-		</div>
-		<!-- RECORD CREATION ERROR -->
-		<div id="ERROR_recordCreation" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="ERROR_recordCreationLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="alert alert-danger fade in">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<strong>
-						<span class="glyphicon glyphicon-remove"></span>
-						ERROR
-					</strong>
-					Record creation error.
-				</div>
-			</div>
-		</div>
-		<!-- NODE CREATION ERROR -->
-		<div id="ERROR_nodeCreation" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="ERROR_nodeCreationLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="alert alert-danger fade in">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<strong>
-						<span class="glyphicon glyphicon-remove"></span>
-						ERROR
-					</strong>
-					Node creation error.
-				</div>
-			</div>
-		</div>
-		<!-- KEY ALREADY EXISTS -->
-		<div id="keyExists" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="keyExistsLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="alert alert-warning fade in">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<strong>
-						<span class="glyphicon glyphicon-warning-sign"></span>
-						Ooops.
-					</strong>
-					The key that you entered already exists.
-				</div>
-			</div>
-		</div>
-		<!-- DELETION ERROR STATE -->
-		<div id="nonexistentPointer" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="nonexistentPointerLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="alert alert-danger fade in">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<strong>
-						<span class="glyphicon glyphicon-remove"></span>
-						Whoops!
-					</strong>
-					Search for nonexistent pointer to node in parent.
-				</div>
-			</div>
-		</div>
-		<!-- KEY NOT FOUND -->
-		<div id="key_notFound" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="key_notFoundLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="alert alert-danger fade in">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<strong>
-						<span class="glyphicon glyphicon-remove"></span>
-						Whoops!
-					</strong>
-					Key not found.
-				</div>
-			</div>
-		</div>
-		
+    <!-- ALERTS -->
+    <!-- EMPTY TREE -->
+    <div id="emptyTree" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="emptyTreeLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="alert alert-danger fade in">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <strong>
+            <span class="glyphicon glyphicon-remove"></span>
+            Uh, oh!
+          </strong>
+          Sorry, the tree is empty.
+        </div>
+      </div>
+    </div>
+    <!-- RANGE IS NOT VALID -->
+    <div id="range_notValid" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="range_notValidLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="alert alert-danger fade in">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <strong>
+            <span class="glyphicon glyphicon-remove"></span>
+            Which came first, the chicken or the egg?
+          </strong>
+          Sorry, the range is not valid.
+        </div>
+      </div>
+    </div>
+    <!-- NO KEY PROVIDED -->
+    <div id="noKey" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="noKeyLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="alert alert-danger fade in">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <strong>
+            <span class="glyphicon glyphicon-remove"></span>
+            No can do!
+          </strong>
+          There is no key provided.
+        </div>
+      </div>
+    </div>
+    <!-- NO MINIMUM RANGE PROVIDED -->
+    <div id="noMin" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="noMinLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="alert alert-danger fade in">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <strong>
+            <span class="glyphicon glyphicon-remove"></span>
+            I can't do it!
+          </strong>
+          There is no minimum range provided.
+        </div>
+      </div>
+    </div>
+    <!-- NO MINIMUM RANGE PROVIDED -->
+    <div id="noMax" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="noMaxLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="alert alert-danger fade in">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <strong>
+            <span class="glyphicon glyphicon-remove"></span>
+            I can't do it!
+          </strong>
+          There is no maximum range provided.
+        </div>
+      </div>
+    </div>
+    <!-- KEY MUST BE NUMERIC -->
+    <div id="mustbeNumeric" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mustbeNumericLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="alert alert-danger fade in">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <strong>
+            <span class="glyphicon glyphicon-remove"></span>
+            I don't speak letters.
+          </strong>
+          The key must be numeric.
+        </div>
+      </div>
+    </div>
+    <!-- MINIMUM RANGE MUST BE NUMERIC -->
+    <div id="min_mustbeNumeric" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="min_mustbeNumericLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="alert alert-danger fade in">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <strong>
+            <span class="glyphicon glyphicon-remove"></span>
+            I don't speak letters.
+          </strong>
+          The minimum range must be numeric.
+        </div>
+      </div>
+    </div>
+    <!-- MAXIMUM RANGE MUST BE NUMERIC -->
+    <div id="max_mustbeNumeric" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="max_mustbeNumericLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="alert alert-danger fade in">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <strong>
+            <span class="glyphicon glyphicon-remove"></span>
+            I don't speak letters.
+          </strong>
+          The maximum range must be numeric.
+        </div>
+      </div>
+    </div>
+    <!-- RECORD CREATION ERROR -->
+    <div id="ERROR_recordCreation" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="ERROR_recordCreationLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="alert alert-danger fade in">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <strong>
+            <span class="glyphicon glyphicon-remove"></span>
+            ERROR
+          </strong>
+          Record creation error.
+        </div>
+      </div>
+    </div>
+    <!-- NODE CREATION ERROR -->
+    <div id="ERROR_nodeCreation" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="ERROR_nodeCreationLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="alert alert-danger fade in">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <strong>
+            <span class="glyphicon glyphicon-remove"></span>
+            ERROR
+          </strong>
+          Node creation error.
+        </div>
+      </div>
+    </div>
+    <!-- KEY ALREADY EXISTS -->
+    <div id="keyExists" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="keyExistsLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="alert alert-warning fade in">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <strong>
+            <span class="glyphicon glyphicon-warning-sign"></span>
+            Ooops.
+          </strong>
+          The key that you entered already exists.
+        </div>
+      </div>
+    </div>
+    <!-- DELETION ERROR STATE -->
+    <div id="nonexistentPointer" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="nonexistentPointerLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="alert alert-danger fade in">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <strong>
+            <span class="glyphicon glyphicon-remove"></span>
+            Whoops!
+          </strong>
+          Search for nonexistent pointer to node in parent.
+        </div>
+      </div>
+    </div>
+    <!-- KEY NOT FOUND -->
+    <div id="key_notFound" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="key_notFoundLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="alert alert-danger fade in">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <strong>
+            <span class="glyphicon glyphicon-remove"></span>
+            Whoops!
+          </strong>
+          Key not found.
+        </div>
+      </div>
+    </div>
+    
 
-		<!-- IMPORTED LIBRARIES:JAVASCRIPT -->
-		<!-- JAVASCRIPT::JQUERY 2.0.3 -->
-		<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-		<!-- JAVASCRIPT::BOOTSTRAP 3.0.2 -->
-		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
-		<!-- JAVASCRIPT::BOOTBOX 4.X.X -->
-		<script src="js/bootbox.min.js"></script>
-		<!-- JAVASCRIPT::BOOTSTRAP-SELECT -->
-		<script src="js/bootstrap-select.min.js"></script>
+    <!-- IMPORTED LIBRARIES:JAVASCRIPT -->
+    <!-- JAVASCRIPT::JQUERY 2.0.3 -->
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <!-- JAVASCRIPT::BOOTSTRAP 3.0.2 -->
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+    <!-- JAVASCRIPT::BOOTBOX 4.X.X -->
+    <script src="js/bootbox.min.js"></script>
+    <!-- JAVASCRIPT::BOOTSTRAP-SELECT -->
+    <script src="js/bootstrap-select.min.js"></script>
 
-		<!-- JAVASCRIPT -->
-		<script src="js/bplustree.js"></script>
-	</body>
+    <!-- JAVASCRIPT -->
+    <script src="js/bplustree.js"></script>
+  </body>
 </html> 
