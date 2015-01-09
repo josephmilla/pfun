@@ -1,4 +1,4 @@
-
+<?php
 	function joincomma($v1,$v2)
 	{
 		return ($v1 . "," . $v2);
@@ -39,3 +39,4 @@
 			array_push($element_list, $ele);
 
 	$arguments_for_hash = array('bucketsz' => $_REQUEST["bucketsz"],'hashdiv' => $_REQUEST["hashdiv"],'ele' => $element_list);
+?>

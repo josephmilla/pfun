@@ -47,7 +47,7 @@
 					<div class="col-lg-12">
 						<div class="input-group input-group-lg">
 							<span class="input-group-addon">Bucket Size</span>
-							<input type="text" name="bucketsz" value=" echo $_REQUEST["bucketsz"]" class="form-control" placeholder="Bucket Size Value">
+							<input type="text" name="bucketsz" value="<?php echo $_REQUEST["bucketsz"]?>" class="form-control" placeholder="Bucket Size Value">
 						</div>
 	    		</div>
 	  		</div>
@@ -59,15 +59,15 @@
 					<div class="col-lg-12">
 						<div class="input-group input-group-lg">
 							<span class="input-group-addon">Hash Divisor</span>
-							<input type="text" name="hashdiv" value=" echo $_REQUEST["hashdiv"]" class="form-control" placeholder="Hash Divisor Value">
+							<input type="text" name="hashdiv" value="<?php echo $_REQUEST["hashdiv"]?>" class="form-control" placeholder="Hash Divisor Value">
 						</div>
 	    		</div>
 	  		</div>			
 
-				 include("php/joincomma.html") 
+				<?php include("php/joincomma.php") ?>
 
 				<input type="hidden" name="elementlist"
-					value=" echo array_reduce($element_list,"joincomma")" />
+					value="<?php echo array_reduce($element_list,"joincomma")?>" />
 
 				<!-- # ROW -->
 				<br><br>
@@ -99,20 +99,20 @@
 
 			</form>
 
-			
+			<?php
 			if (count($element_list) > 0
 					&& $_REQUEST["bucketsz"] > 0
 					&& $_REQUEST["hashdiv"] > 0)
 			{
-			
+			?>
 
 			<table>
 				<tr bgcolor="#AAAAAA">
 					<th><span class="input-group-addon">Element</span></th>
-					<th><span class="input-group-addon">Hash = Element mod  echo $_REQUEST["hashdiv"] </span></th>
+					<th><span class="input-group-addon">Hash = Element mod <?php echo $_REQUEST["hashdiv"] ?></span></th>
 					<th><span class="input-group-addon">Binary</span></th>
 				</tr>
-				
+				<?php
 				foreach ($element_list as $element)
 				{
 					echo "<tr>";
@@ -122,12 +122,12 @@
 					echo "</tr>";
 
 				}
-				
+				?>
 			</table>
 
-			
+			<?php
 			}
-			
+			?>
 		</div>
 
 		<!-- IMPORTED LIBRARIES:JAVASCRIPT -->

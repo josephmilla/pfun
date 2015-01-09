@@ -1,4 +1,4 @@
-
+<?php
 function joinx($v1,$v2)
 {
 	return ($v1 . $v2);
@@ -36,4 +36,4 @@ function array_power_set($array) {
             array_push($results, array_merge(array($element), $combination));
     return array_slice($results,1);
 }
-
+?>
