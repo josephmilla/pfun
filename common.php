@@ -5,7 +5,7 @@ function joinx($v1,$v2)
 }
 
 function ispropersubset($super,$subset)
-{	return ((count($super) > count($subset) && issubset($super,$subset)));
+{	return ((count($super) > count($subset) && issubset($super,$subset)));
 }
 
 function issubset($super,$subset)
