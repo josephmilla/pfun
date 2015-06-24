@@ -5,16 +5,16 @@
 - Comment: UIUC CS411 Fall 2013
 -->
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "//www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 	<head>
 		<title>PFun - Extensible Hash</title>
 		<!-- IMPORTED LIBRARIES -->
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
+		<link href='//fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
 
 		<!-- IMPORTED LIBRARIES:STYLESHEETS -->
 		<!-- STYLESHEETS::BOOTSTRAP 3.0.2 -->
-		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"/>
 		<link href="css/bootstrap-select.min.css" rel="stylesheet">
 
 		<!-- ICONS -->
@@ -62,7 +62,7 @@
 							<input type="text" name="hashdiv" value="<?php echo $_REQUEST["hashdiv"]?>" class="form-control" placeholder="Hash Divisor Value">
 						</div>
 	    		</div>
-	  		</div>			
+	  		</div>
 
 				<?php include("php/joincomma.php") ?>
 
@@ -132,9 +132,9 @@
 
 		<!-- IMPORTED LIBRARIES:JAVASCRIPT -->
 		<!-- JAVASCRIPT::JQUERY 2.0.3 -->
-		<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+		<script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
 		<!-- JAVASCRIPT::BOOTSTRAP 3.0.2 -->
-		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+		<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
 		<!-- JAVASCRIPT::BOOTBOX 4.X.X -->
 		<script src="js/bootbox.min.js"></script>
 		<!-- JAVASCRIPT::BOOTSTRAP-SELECT -->
